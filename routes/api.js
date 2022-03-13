@@ -13,8 +13,18 @@ router.post('/add',bodyParser.json(), (req,res) =>{
     let title = req.body.title
 
     tasks.addTask(title)
-    res.send("post adicionado")
+    res.send("add task")
 
-} ) 
+} )
+
+router.post("/remover",bodyParser.json(), (req,res)=>
+{
+    
+    let id = req.body.id
+    
+    tasks.remover(id)
+
+    res.send('removed task')
+})
 
 module.exports = router

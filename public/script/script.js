@@ -1,6 +1,4 @@
 
-
-
 function showTasks()
 {
     fetch('http://localhost:3000/all').then( res =>
@@ -16,7 +14,10 @@ function showTasks()
        
 
         tasks.forEach(task =>  {
-            let taskInHTML = `<div> ${task.title}</div>`
+            let taskInHTML = ` 
+            <input id="${task.id}input" onclick="checkstatus(id)" type='checkbox'>
+            <div id="${task.id}"> ${task.title}</div>
+            <button id="${task.id}button" onclick="remover(id)">Remover</button>`
 
             tasksInHTML += taskInHTML
         })
@@ -41,6 +42,41 @@ function addTask()
     
     document.getElementById('title').value =""
 }
+
+function checkstatus(id)
+{
+    let state =  document.getElementById(id).checked  
+    
+    id = id.replace('input',"")
+    if(state)
+    {
+        document.getElementById(id).style="text-decoration: line-through"
+    }else
+    {
+        document.getElementById(id).style="text-decoration: none"
+    }
+    
+        
+ 
+}
+function remover(id)
+{
+    id = id.replace("button","")
+    
+    const options = {
+        method:"POST",
+        headers : new Headers({'content-type':'application/json'}),
+        body: JSON.stringify({id})
+    }
+  
+    fetch('http://localhost:3000/remover',options).then( res =>
+    {
+        
+        showTasks()
+    })
+
+}
+
 
 window.onload = showTasks()
 
