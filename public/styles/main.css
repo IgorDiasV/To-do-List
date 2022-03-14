@@ -1,0 +1,26 @@
+
+#allTasks div
+{
+    display: inline-block;
+}
+
+#allTasks{
+
+    border: 0.5px solid black;
+    padding: 10px;
+    
+    
+
+}
+#corpo
+{
+   
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.task{
+
+    margin-bottom: 10px;
+}
