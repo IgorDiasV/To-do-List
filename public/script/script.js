@@ -14,11 +14,13 @@ function showTasks()
        
 
         tasks.forEach(task =>  {
-            let taskInHTML = ` 
+            let taskInHTML = `<div class="task"> 
             <input id="${task.id}input" onclick="checkstatus(id)" type='checkbox'>
             <div id="${task.id}"> ${task.title}</div>
-            <button id="${task.id}button" onclick="remover(id)">Remover</button>`
-
+            <button id="${task.id}button" onclick="remover(id)">Remover</button> 
+            </div>
+            <br>`
+           
             tasksInHTML += taskInHTML
         })
         document.getElementById('allTasks').innerHTML=tasksInHTML
