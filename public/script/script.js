@@ -15,9 +15,11 @@ function showTasks()
 
         tasks.forEach(task =>  {
             let taskInHTML = `<div class="task"> 
-            <input id="${task.id}input" onclick="checkstatus(id)" type='checkbox'>
+            <input id="input${task.id}" onclick="checkstatus(id)" type='checkbox'>
             <div id="${task.id}"> ${task.title}</div>
-            <button id="${task.id}button" onclick="remover(id)">Remover</button> 
+            
+            <button id="button${task.id}" class="botao" onclick="remover(id)">Remover</button> 
+           
             </div>
             <br>`
            
