@@ -1,4 +1,27 @@
 
+body{
+    background-color: #e9e9e9;
+    
+}
+h1{
+    text-align: center;
+}
+#nameTask{
+
+    border: 0.05px solid black;
+    border-radius:15px;
+    padding:7px;
+    width:565px;
+   
+}
+#addTask
+{
+    border: 0.05px solid black;
+    border-radius:15px;
+    padding:7px;
+
+}
+
 #allTasks div
 {
     display: inline;
@@ -9,6 +32,8 @@
     position: relative;
     border: 0.5px solid black;
     padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
     
     
 

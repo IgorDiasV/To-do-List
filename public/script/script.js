@@ -30,7 +30,7 @@ function showTasks()
 }
 function addTask()
 {
-    let title = document.getElementById('title').value
+    let title = document.getElementById('nameTask').value
 
     const options = {
         method:"POST",
@@ -44,7 +44,7 @@ function addTask()
 
     })
     
-    document.getElementById('title').value =""
+    document.getElementById('nameTask').value =""
 }
 
 function checkstatus(id)
